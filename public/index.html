@@ -3,138 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service Company Pro - Preview</title>
+    <title>Service Company Pro Preview</title>
     <style>
-      :root {
-        --accent: #b45309;
-        --text: #0f172a;
-        --muted: #475569;
-        --bg: #f8fafc;
-        --card: #ffffff;
-        --line: #e2e8f0;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text);
-        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
-      }
-      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 18px 0;
-      }
-      .brand { font-size: 20px; font-weight: 700; color: var(--text); }
-      .menu { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
-      .hero {
-        margin-top: 20px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 42px;
-        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
-      }
-      h1 { margin: 0; font-size: 44px; line-height: 1.1; }
-      .sub { margin: 16px 0 24px; color: var(--muted); font-size: 20px; line-height: 1.5; max-width: 760px; }
-      .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-      .btn {
-        border: none; border-radius: 10px; padding: 11px 16px; font-weight: 600;
-        cursor: pointer; text-decoration: none; display: inline-block;
-      }
-      .btn-primary { background: var(--accent); color: white; }
-      .btn-secondary { background: #eef2ff; color: #1e293b; }
-      .grid {
-        margin-top: 20px;
-        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 18px;
-      }
-      .card h3 { margin: 0 0 8px; font-size: 18px; }
-      .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .section { margin-top: 20px; }
-      .section h2 { margin: 0 0 10px; font-size: 24px; }
-      .section p { margin: 0; color: var(--muted); line-height: 1.7; }
-      .feature-list { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .feature {
-        background: #f8fafc;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 14px;
-      }
-      .footer {
-        margin: 26px 0 36px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-      }
-      @media (max-width: 900px) {
-        h1 { font-size: 34px; }
-        .grid { grid-template-columns: 1fr; }
-        .feature-list { grid-template-columns: 1fr; }
-        .hero { padding: 24px; }
-      }
+      :root { --bg:#fffaf4; --ink:#2d1a07; --accent:#b45309; --line:#f1ddc7; --muted:#6c4d2f; }
+      *{box-sizing:border-box;}
+      body{margin:0;font-family:"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);}
+      .wrap{max-width:1120px;margin:0 auto;padding:20px 20px 40px;}
+      .top{display:flex;justify-content:space-between;align-items:center;}
+      .brand{font-size:22px;font-weight:800;}
+      .menu{display:flex;gap:16px;color:#7a5a3a;}
+      .hero{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;}
+      h1{margin:0;font-size:42px;}
+      .lead{margin-top:12px;color:var(--muted);font-size:20px;line-height:1.6;max-width:760px;}
+      .cta{margin-top:20px;display:flex;gap:10px;}
+      .btn{padding:11px 15px;border-radius:10px;text-decoration:none;font-weight:700;}
+      .a{background:var(--accent);color:#fff;} .b{background:#f8e6d4;color:#8a4d17;}
+      .row{margin-top:15px;display:grid;grid-template-columns:1.2fr 1fr;gap:12px;}
+      .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;}
+      .svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;}
+      .svc div{background:#fff7ed;border:1px solid #f4dcc3;border-radius:10px;padding:10px;}
+      .steps{counter-reset:s;}
+      .steps li{list-style:none;counter-increment:s;padding:8px 0;border-bottom:1px dashed #f0ddc9;}
+      .steps li:before{content:counter(s) ". ";font-weight:800;color:#a4570f;}
+      .testi{margin-top:12px;}
+      .testi blockquote{margin:0;padding:10px;border-left:4px solid #eec89d;background:#fff8ef;color:#6b4b2d;}
+      @media (max-width:930px){ .row{grid-template-columns:1fr;} .svc{grid-template-columns:1fr;} h1{font-size:34px;} }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <header class="nav">
+      <header class="top">
         <div class="brand">Service Company Pro</div>
-        <nav class="menu">
-          <span>Home</span>
-          <span>Features</span>
-          <span>Cases</span>
-          <span>Contact</span>
-        </nav>
+        <nav class="menu"><span>Services</span><span>Process</span><span>Cases</span><span>Book</span></nav>
       </header>
 
-      <main class="hero">
+      <section class="hero">
         <h1>Service Company Pro</h1>
-        <p class="sub">A service business template with offerings, process, and lead capture.</p>
-        <div class="cta-row">
-          <a href="#" class="btn btn-primary">Start With This Template</a>
-          <a href="#" class="btn btn-secondary">View Documentation</a>
-        </div>
-      </main>
-
-      <section class="grid section">
-        <article class="card">
-          <h3>Ready-to-Deploy Structure</h3>
-          <p>Comes with homepage sections, content blocks and a clean information hierarchy.</p>
-        </article>
-        <article class="card">
-          <h3>Cloudflare Friendly</h3>
-          <p>Designed to work with Pages, Workers, D1 and KV workflow in your platform strategy.</p>
-        </article>
-        <article class="card">
-          <h3>Commercial Reuse</h3>
-          <p>Template metadata and versioning are prepared for production deployment and updates.</p>
-        </article>
-      </section>
-
-      <section class="section card">
-        <h2>What You Can Customize</h2>
-        <p>Swap brand assets, update copy, connect forms, and map routes to your deployment pipeline.</p>
-        <div class="feature-list">
-          <div class="feature">Hero messaging and value proposition</div>
-          <div class="feature">Feature modules and media blocks</div>
-          <div class="feature">Case study and trust sections</div>
-          <div class="feature">Contact CTA and conversion area</div>
+        <p class="lead">Template designed for agencies and local service operators with clear offers, execution workflow, and booking-first CTA.</p>
+        <div class="cta">
+          <a class="btn a" href="#">Book Free Consultation</a>
+          <a class="btn b" href="#">View Service Catalog</a>
         </div>
       </section>
 
-      <section class="section card">
-        <h2>Deployment Notes</h2>
-        <p>This preview demonstrates the visual template shell. Content and routes are applied by your deployment APIs in user accounts.</p>
+      <section class="row">
+        <article class="card">
+          <h2 style="margin:0;">Service Packages</h2>
+          <div class="svc">
+            <div><b>Starter Audit</b><br />Site health, funnel check, 7-day plan.</div>
+            <div><b>Growth Sprint</b><br />30-day implementation and KPI review.</div>
+            <div><b>Retainer Pro</b><br />Monthly optimization and reporting cadence.</div>
+            <div><b>Emergency Fix</b><br />Critical issue triage in 24 hours.</div>
+          </div>
+        </article>
+        <aside class="card">
+          <h2 style="margin:0;">Delivery Process</h2>
+          <ol class="steps" style="padding-left:0; margin:10px 0 0;">
+            <li>Discovery call and scope alignment</li>
+            <li>Roadmap with milestones and owners</li>
+            <li>Execution with weekly checkpoints</li>
+            <li>Handover and ongoing support options</li>
+          </ol>
+        </aside>
       </section>
 
-      <footer class="footer">
-        Template preview generated for Mirror-X Template Factory
-      </footer>
+      <section class="card testi">
+        <h2 style="margin:0 0 8px;">Client Snapshot</h2>
+        <blockquote>
+          "In six weeks we cut lead response time by 42% and doubled qualified meetings. The service workflow was transparent from day one."
+        </blockquote>
+      </section>
     </div>
   </body>
 </html>
